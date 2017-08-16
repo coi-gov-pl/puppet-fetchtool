@@ -1,0 +1,23 @@
+{
+  "name": "coi-fetchtool",
+  "version": "0.1.0",
+  "author": "Center of Information Technology COI.gov.pl (MC)",
+  "summary": "Fetch tool to download packages",
+  "license": "proprietary",
+  "source": "https://stash.coi.gov.pl/scm/puppet/coifetchtool.git",
+  "project_page": "https://stash.coi.gov.pl/projects/PUPPET/repos/coifetchtool/browse",
+  "issues_url": "https://jira.coi.gov.pl/projects/ASRP/summary",
+  "operatingsystem_support": [
+    { "operatingsystem": "Ubuntu", "operatingsystemrelease": [ "14.04", "16.04" ] },
+    { "operatingsystem": "CentOS", "operatingsystemrelease": [ "6", "7" ] },
+    { "operatingsystem": "OracleLinux", "operatingsystemrelease": [ "6", "7" ] },
+    { "operatingsystem": "RedHat", "operatingsystemrelease": [ "6", "7" ] },
+    { "operatingsystem": "Debian", "operatingsystemrelease": [ "7", "8" ] }
+  ],
+  "dependencies": [
+    {
+      "name": "puppetlabs/stdlib",
+      "version_requirement":">=4.0.0 <6.0.0"
+    }
+  ]
+}
