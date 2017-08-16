@@ -23,7 +23,9 @@ define fetchtool::internal::wget (
       gid    => $group,
     })
   }
-  exec{"wget -q '${name}${filename}' -P '${fetch_dir}' && chmod ${mode} '${fetch_dir}' && chown ${owner}:${group} '${fetch_dir}'":
+  $dest = "${fetch_dir}/${filename}"
+  exec{'wget':
+    command   => "wget -q '${name}${filename}' -P '${fetch_dir}' && chmod ${mode} '${dest}' && chown ${owner}:${group} '${dest}'",
     path      => '/usr/bin:/usr/sbin:/bin:/usr/local/bin:/opt/local/bin',
     timeout   => 60,
     require   => Package['wget'],
