@@ -1,6 +1,6 @@
 {
-  "name": "coi-fetchtool",
-  "version": "0.1.0",
+  "name": "konradkuczynski-fetchtool",
+  "version": "0.2.0",
   "author": "Center of Information Technology COI.gov.pl (MC)",
   "summary": "Fetch tool to download packages",
   "license": "proprietary",
