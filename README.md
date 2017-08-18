@@ -3,7 +3,7 @@
 Allow to fetch files, in chosen by user way. Default way to download files is wget.
 It is possible to change tool by change settings configuration - ```fetchtool::settings::fetch_tool```.
 
-## Example usage of srptime module
+## Example usage of fetchtool module
 
 ```puppet
 fetchtool::download { 'flyway-commandline-4.2.0-linux-x64.tar.gz':
