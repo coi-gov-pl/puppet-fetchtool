@@ -24,7 +24,7 @@ define fetchtool::internal::wget (
     })
   }
   $dest = "${fetch_dir}/${filename}"
-  exec{'wget':
+  exec{ "wget-${filename}":
     command   => "wget -q '${name}${filename}' -P '${fetch_dir}' && chmod ${mode} '${dest}' && chown ${owner}:${group} '${dest}'",
     path      => '/usr/bin:/usr/sbin:/bin:/usr/local/bin:/opt/local/bin',
     timeout   => 60,
