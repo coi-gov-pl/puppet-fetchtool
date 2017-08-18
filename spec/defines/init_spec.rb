@@ -13,7 +13,7 @@ describe 'fetchtool::download', type: :define do
         end
         it { is_expected.to compile }
         it { is_expected.to contain_class('fetchtool::settings') }
-        it { is_expected.to contain_exec('wget') }
+        it { is_expected.to contain_exec('wget-file.zip') }
         it { is_expected.to contain_user('mark') }
         it { is_expected.to contain_group('wheel') }
         it { is_expected.to contain_package('wget') }
