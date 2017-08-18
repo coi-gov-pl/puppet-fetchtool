@@ -1,4 +1,4 @@
-source ENV['GEM_SOURCE'] || 'https://artifactory.coi.gov.pl/api/gems/rubygems/'
+source ENV['GEM_SOURCE'] || 'https://rubygems.org'
 
 SUPPORTED_RUBIES = [
   '~> 2.1.8',
