@@ -10,8 +10,8 @@ GEM
   remote: https://rubygems.org/
   specs:
     CFPropertyList (2.3.5)
-    addressable (2.5.2)
-      public_suffix (>= 2.0.2, < 4.0)
+    addressable (2.5.1)
+      public_suffix (~> 2.0, >= 2.0.2)
     ast (2.3.0)
     aws-sdk-v1 (1.67.0)
       json (~> 1.4)
@@ -78,14 +78,18 @@ GEM
     domain_name (0.5.20170404)
       unf (>= 0.0.5, < 1.0.0)
     excon (0.57.1)
-    facter (2.5.1)
-    facter (2.5.1-x64-mingw32)
+    facter (2.4.6)
+    facter (2.4.6-x64-mingw32)
       ffi (~> 1.9.5)
+      win32-dir (~> 0.4.8)
+      win32-security (~> 0.2.5)
     facterdb (0.3.11)
       facter
       jgrep
     faraday (0.12.1)
       multipart-post (>= 1.2, < 3)
+    fast_gettext (1.1.0)
+    ffi (1.9.18)
     ffi (1.9.18-x64-mingw32)
     fission (0.5.0)
       CFPropertyList (~> 2.2)
@@ -226,6 +230,13 @@ GEM
       fog-core
       nokogiri (>= 1.5.11, < 2.0.0)
     formatador (0.2.5)
+    gettext (3.2.3)
+      locale (>= 2.0.5)
+      text (>= 1.3.0)
+    gettext-setup (0.25)
+      fast_gettext (~> 1.1.0)
+      gettext (>= 3.0.2)
+      locale
     google-api-client (0.10.3)
       addressable (~> 2.3)
       googleauth (~> 0.5)
@@ -243,8 +254,7 @@ GEM
       multi_json (~> 1.11)
       os (~> 0.9)
       signet (~> 0.7)
-    hiera (1.3.4)
-      json_pure
+    hiera (3.4.0)
     hocon (1.2.5)
     http-cookie (1.0.3)
       domain_name (~> 0.5)
@@ -259,9 +269,10 @@ GEM
     json (1.8.6)
     json-schema (2.8.0)
       addressable (>= 2.4)
-    json_pure (2.1.0)
+    json_pure (1.8.6)
     jwt (1.5.6)
     little-plugger (1.1.4)
+    locale (2.1.2)
     logging (2.2.2)
       little-plugger (~> 1.1)
       multi_json (~> 1.10)
@@ -274,8 +285,9 @@ GEM
       systemu
     memoist (0.16.0)
     metaclass (0.0.4)
-    metadata-json-lint (2.0.2)
+    metadata-json-lint (2.0.1)
       json-schema (~> 2.8)
+      puppet (>= 4.7.0, < 6.0.0)
       spdx-licenses (~> 1.0)
     method_source (0.8.2)
     mime-types (2.99.3)
@@ -310,22 +322,26 @@ GEM
     pry-byebug (3.4.2)
       byebug (~> 9.0)
       pry (~> 0.10)
-    public_suffix (3.0.0)
-    puppet (3.8.7)
-      facter (> 1.6, < 3)
-      hiera (~> 1.0)
-      json_pure
-    puppet (3.8.7-x64-mingw32)
-      facter (> 1.6, < 3)
-      ffi (~> 1.9.5)
-      hiera (~> 1.0)
-      json_pure
+    public_suffix (2.0.5)
+    puppet (4.9.4)
+      facter (> 2.0, < 4)
+      gettext-setup (>= 0.10, < 1)
+      hiera (>= 2.0, < 4)
+      json_pure (~> 1.8)
+      locale (~> 2.1)
+    puppet (4.9.4-x64-mingw32)
+      facter (> 2.0, < 4)
+      ffi (~> 1.9.6)
+      gettext-setup (>= 0.10, < 1)
+      hiera (>= 2.0, < 4)
+      json_pure (~> 1.8)
+      locale (~> 2.1)
       minitar (~> 0.5.4)
-      win32-dir (~> 0.4.9)
-      win32-eventlog (~> 0.6.1)
-      win32-process (~> 0.7.4)
-      win32-security (~> 0.2.5)
-      win32-service (~> 0.8.6)
+      win32-dir (= 0.4.9)
+      win32-eventlog (= 0.6.5)
+      win32-process (= 0.7.5)
+      win32-security (= 0.2.5)
+      win32-service (= 0.8.8)
     puppet-blacksmith (3.4.0)
       puppet (>= 2.7.16)
       rest-client (~> 1.8.0)
@@ -472,6 +488,7 @@ GEM
     stomp (1.4.4)
     stringify-hash (0.0.2)
     systemu (2.6.5)
+    text (1.3.1)
     thor (0.19.4)
     trollop (2.1.2)
     uber (0.1.0)
@@ -506,7 +523,7 @@ DEPENDENCIES
   metadata-json-lint
   pry
   pry-byebug
-  puppet (~> 3)
+  puppet
   puppet-examples-helpers (~> 0)
   puppet-module-posix-default-r2.1 (= 0.0.7)
   puppet-module-posix-dev-r2.1 (= 0.0.7)
@@ -522,4 +539,4 @@ DEPENDENCIES
   vagrant-wrapper
 
 BUNDLED WITH
-   1.15.3
+   1.15.1
