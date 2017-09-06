@@ -12,21 +12,15 @@ matrix:
   include:
   - rvm: '2.1'
     env: PUPPET_GEM_VERSION="~> 3"
-    install:
-      - bundle update puppet
-      - bundle install --without development --jobs=3 --retry=3 --no-deployment
+    install: bundle --without development --jobs=3 --retry=3 --no-deployment
   - rvm: '2.1'
   - rvm: '2.3'
     env: PUPPET_GEM_VERSION="~> 3"
-    install:
-      - bundle update puppet
-      - bundle install --without development --jobs=3 --retry=3 --no-deployment
+    install: bundle --without development --jobs=3 --retry=3 --no-deployment
   - rvm: '2.3'
   - rvm: '2.4'
     env: PUPPET_GEM_VERSION="~> 3"
-    install:
-      - bundle update puppet
-      - bundle install --without development --jobs=3 --retry=3 --no-deployment
+    install: bundle --without development --jobs=3 --retry=3 --no-deployment
   - rvm: '2.4'
   - rvm: '2.4'
     sudo: required
