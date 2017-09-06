@@ -1,7 +1,8 @@
 # Configuration parameters for fetchtool
 class fetchtool::settings (
-  $user        = hiera('fetchool::settings::user', 'mark'),
-  $group       = hiera('fetchool::settings::group', 'wheel'),
-  $fetch_tool  = hiera('fetchtool::settings::fetchtool', 'fetchtool::internal::wget'),
-){
+  $group        = 'root',
+  $user         = 'root',
+  $mode         = '0644',
+  $fetch_tool   = 'fetchtool::internal::wget',
+) {
 }
