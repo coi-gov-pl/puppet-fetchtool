@@ -1,6 +1,6 @@
 {
   "name": "coi-fetchtool",
-  "version": "0.3.0",
+  "version": "1.0.0",
   "author": "Center of Information Technology COI.gov.pl (MC)",
   "summary": "Fetch tool to download packages",
   "license": "Apache-2.0",
