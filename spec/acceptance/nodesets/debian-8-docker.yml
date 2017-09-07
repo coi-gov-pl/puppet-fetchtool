@@ -1,5 +1,5 @@
 HOSTS:
-  debian-82-docker:
+  debian-8-docker:
     platform: debian-8-amd64
     hypervisor : docker
     image: debian:8

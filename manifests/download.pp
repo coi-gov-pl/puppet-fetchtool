@@ -1,8 +1,8 @@
-# COI way of downloading RPMCOI artifacts
+# A wrapper to download files
 define fetchtool::download (
-    $address,
-    $fetch_dir,
-    $filename   = $name,
+    $address    = $name,
+    $fetch_dir  = '/usr/src',
+    $filename   = undef,
     $mode       = '0640',
     $owner      = undef,
     $group      = undef,
@@ -25,12 +25,15 @@ define fetchtool::download (
     }
 
     validate_string($address)
+
     $all_attrs = {
-      $address => { 'filename'  => $filename,
-                    'fetch_dir' => $fetch_dir,
-                    'mode'      => $mode,
-                    'owner'     => $actual_owner,
-                    'group'     => $actual_group, }
+      $address => merge($attributes, {
+        'filename'  => $filename,
+        'fetch_dir' => $fetch_dir,
+        'mode'      => $mode,
+        'owner'     => $actual_owner,
+        'group'     => $actual_group,
+      })
     }
 
     create_resources($actual_fetch_tool, $all_attrs)

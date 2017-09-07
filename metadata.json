@@ -1,12 +1,12 @@
 {
-  "name": "konradkuczynski-fetchtool",
-  "version": "0.3.0",
+  "name": "coi-fetchtool",
+  "version": "1.0.0",
   "author": "Center of Information Technology COI.gov.pl (MC)",
   "summary": "Fetch tool to download packages",
-  "license": "proprietary",
-  "source": "https://github.com/konradkuczynski/coi-fetchtool.git",
-  "project_page": "https://github.com/konradkuczynski/coi-fetchtool.git",
-  "issues_url": "https://github.com/konradkuczynski/coi-fetchtool.git",
+  "license": "Apache-2.0",
+  "source": "https://github.com/coi-gov-pl/puppet-fetchtool.git",
+  "project_page": "https://github.com/coi-gov-pl/puppet-fetchtool",
+  "issues_url": "https://github.com/coi-gov-pl/puppet-fetchtool/issues",
   "operatingsystem_support": [
     { "operatingsystem": "Ubuntu", "operatingsystemrelease": [ "14.04", "16.04" ] },
     { "operatingsystem": "CentOS", "operatingsystemrelease": [ "6", "7" ] },

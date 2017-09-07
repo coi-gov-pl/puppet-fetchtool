@@ -1,16 +1,32 @@
 # COI-fetchtool Puppet module
 
-Allow to fetch files, in chosen by user way. Default way to download files is wget.
-It is possible to change tool by change settings configuration - ```fetchtool::settings::fetch_tool```.
+Allow to fetch files, in chosen by user way. By default it will utulize WGET to download files.
+To change the way of downloading an artifact, one should change setting - `fetchtool::settings::fetch_tool`, to use some other definition.
 
-## Example usage of fetchtool module
+## Simple example usage of fetchtool module
 
 ```puppet
-fetchtool::download { 'flyway-commandline-4.2.0-linux-x64.tar.gz':
-  fetch_dir => '/usr/src',
-  mode      => '0660',
-  owner     => 'flyway',
-  group     => 'flyway',
-  address   => 'https://repo1.maven.org/maven2/org/flywaydb/flyway-commandline/4.2.0/'
+# Will download file to /usr/src/eicar.com
+fetchtool::download { 'http://www.eicar.org/download/eicar.com': }
+```
+
+## More complex example of fetchtool module
+
+```puppet
+$baseuri = 'https://repo1.maven.org/maven2/org/flywaydb/flyway-commandline/4.2.0'
+$filename = 'flyway-commandline-4.2.0-linux-x64.tar.gz'
+
+fetchtool::download { 'alias-for-flyway-4.2.0.tgz':
+  address    => "${baseuri}/${filename}",
+  mode       => '0660',
+  owner      => 'flyway',
+  group      => 'flyway',
+  fetch_dir  => '/tmp',
+  filename   => 'flyway-4.2.0.tgz',
+  attributes => {
+    # Additional attibutes to specific implementation - in this case WGET
+    'timeout'      => 1200,
+    'install_wget' => true,
+  }
 }
 ```
