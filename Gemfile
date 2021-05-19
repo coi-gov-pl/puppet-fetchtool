@@ -42,11 +42,11 @@ group :system_test do
   gem "puppet-module-posix-system-r#{minor_version}",  VER, require: false, platforms: 'ruby'
   gem "puppet-module-win-system-r#{minor_version}",    VER, require: false, platforms: %w[mswin mingw x64_mingw]
   beakerver = RVERSION < ver('2.2.0') ? ['>= 3.13.0', '< 4.0.0'] : nil
-  gem 'beaker',                                        *location_for(ENV['BEAKER_VERSION'] || beakerver)
-  gem 'beaker-abs',                                    *location_for(ENV['BEAKER_ABS_VERSION'])
+  gem 'beaker', '>= 3.19.0', *location_for(ENV['BEAKER_VERSION'] || beakerver)
+  gem 'beaker-abs', '>= 0.2.0', *location_for(ENV['BEAKER_ABS_VERSION'])
   gem 'beaker-hostgenerator',                          *location_for(ENV['BEAKER_HOSTGENERATOR_VERSION'])
   gem 'beaker-pe',                                     require: false
-  gem 'beaker-rspec',                                  *location_for(ENV['BEAKER_RSPEC_VERSION'])
+  gem 'beaker-rspec', '>= 6.1.0', *location_for(ENV['BEAKER_RSPEC_VERSION'])
   gem 'vagrant-wrapper',                               require: false
 end
 
