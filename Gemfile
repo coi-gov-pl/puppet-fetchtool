@@ -27,14 +27,14 @@ group :test do
   gem "puppet-module-posix-dev-r#{minor_version}",     VER, require: false, platforms: 'ruby'
   gem "puppet-module-win-default-r#{minor_version}",   VER, require: false, platforms: %w[mswin mingw x64_mingw]
   gem "puppet-module-win-dev-r#{minor_version}",       VER, require: false, platforms: %w[mswin mingw x64_mingw]
-  gem 'metadata-json-lint',                            require: false, platforms: %w[mswin mingw x64_mingw]
+  gem 'metadata-json-lint', '>= 2.0.2', require: false, platforms: %w[mswin mingw x64_mingw]
   gem 'puppet-examples-helpers', '~> 0',               require: false
   gem 'rake-performance', '~> 0',                      require: false
-  gem 'rspec-puppet-facts',                            require: false
+  gem 'rspec-puppet-facts', '>= 1.8.0', require: false
   gem 'simplecov',                                     require: false, platforms: %w[mswin mingw x64_mingw]
   # TODO: for windows, remove after 2.6.0 release of rspec-puppet https://github.com/rodjek/rspec-puppet/milestone/4
   gem 'rspec-puppet', git: 'https://github.com/rodjek/rspec-puppet.git', ref: '99fc831', platforms: %w[mswin mingw x64_mingw]
-  gem 'rspec-puppet-facts-unsupported', '~> 0',        require: false
+  gem 'rspec-puppet-facts-unsupported', '~> 0', '>= 0.1.0', require: false
 end
 
 # Acceptance Testing dependencies group
@@ -56,7 +56,7 @@ group :development do
   gem 'pry-byebug', require: false
 end
 
-gem 'puppet', *location_for(ENV['PUPPET_GEM_VERSION'])
+gem 'puppet', '>= 6.25.1', *location_for(ENV['PUPPET_GEM_VERSION'])
 
 # Only explicitly specify Facter/Hiera if a version has been specified.
 # Otherwise it can lead to strange bundler behavior. If you are seeing weird
